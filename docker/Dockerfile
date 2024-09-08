@@ -21,8 +21,6 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
 
 WORKDIR /var/www
 
-COPY . /var/www
-
 COPY --chown=www-data:www-data . /var/www
 
 USER www-data
