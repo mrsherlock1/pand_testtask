@@ -19,10 +19,6 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
 && pecl install redis \
 && docker-php-ext-enable redis
 
-WORKDIR /var/www
-
-COPY . /var/www
-
 COPY ./scheduler/cronjobs /etc/cron.d/cronjobs
 RUN chmod 0644 /etc/cron.d/cronjobs
 RUN crontab /etc/cron.d/cronjobs

@@ -38,7 +38,7 @@ services:
     restart: unless-stopped
     working_dir: /var/www
     volumes:
-      - ./www:/var/www
+      - ./www/price_checker_service:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - laravel_network
@@ -85,7 +85,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./:/var/www
+      - ./www:/var/www
       - ./nginx/conf.d:/etc/nginx/conf.d
     networks:
       - laravel_network
